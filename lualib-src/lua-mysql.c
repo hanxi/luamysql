@@ -4,7 +4,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-#include "mysql.h"
+#include "mysql/mysql.h"
 
 // return MYSQL * to lua
 int _connect(lua_State* L) {

@@ -15,11 +15,11 @@ function mysql.connect (host,user,pass,dbname,dbport)
     local db = {
         conn = driver.connect(host,user,pass,dbname,dbport),
         name = dbname,
+        close = function (db)
+            return driver.disconnect(db.conn)
+        end,
         query = function (db,sql)
             return driver.query(db.conn,sql)
-        end,
-        close = function (db,sql)
-            return driver.disconnect(db.conn,cfgdbdisconnect)
         end,
         insert = function (db,sql)
             return driver.insert(db.conn,sql)

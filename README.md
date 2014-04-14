@@ -1,4 +1,4 @@
-# lua driver for mysql
+# mysql driver for lua
 
 ------
 
